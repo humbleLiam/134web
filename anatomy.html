@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Anatomy</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 20px;
+            }
+            header, section, footer {
+                margin-bottom: 20px;
+            }
+            h2.clickable {
+                cursor: pointer;
+                color: blue;
+                text-decoration: underline;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid gray;
+                text-align: left;
+                padding: 8px;
+            }
+            .audio-button {
+                background-color: lightgray;
+                border: 1px solid ivory;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                padding: 0;
+                cursor: pointer;
+            }
+            .audio-button:hover {
+                background-color: ivory;
+            }
+            .audio-icon {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Human Anatomy</h2>
+        <ul>
+            <li><a href="#skeletal">Skeletal System</a></li>
+            <li><a href="#muscular">Muscular System</a></li>
+            <li><a href="#nervous">Nervous System</a></li>
+        </ul>
+        <p>Human anatomy is the study of the structure and organization of the human body. It is a fundamental branch of biology that explores the intricate design of the human organism, from the smallest units of life to the complex systems that sustain it. Anatomy delves into the arrangement of tissues, organs, and organ systems, offering insight into the functions they perform and the relationships they share. By examining the anatomical features of the human body, we gain a deeper understanding of how our bodies work and how they interact with the environment.</p>
+
+        <section id="skeletal">
+            <h2 class="clickable" onclick="goToPage('skeletal_system.html')">Skeletal System</h2>
+            <img src="skeletal.jpg" alt="Shoulder Bone Structure">
+            <p>The skeletal system provides the framework for the human body, supporting and protecting vital organs while enabling movement. Composed of bones, cartilage, and ligaments, this system offers structural integrity and stability. Bones come in various shapes and sizes, ranging from long bones like the femur to flat bones like the skull. Joints allow for articulation between bones, facilitating motion. The skeletal system also plays a crucial role in mineral storage, blood cell production, and the regulation of calcium levels in the body.</p>
+        </section>
+        <section id="muscular">
+            <h2 class="clickable" onclick="goToPage('muscular_system.html')">Muscular System</h2>
+            <img src="muscular.jpg" alt="Shoulder Muscular Structure">
+            <p>The muscular system is responsible for generating force and producing movement. Made up of skeletal muscles, smooth muscles, and cardiac muscle, this system powers voluntary and involuntary actions alike. Skeletal muscles, attached to bones by tendons, contract and relax to move the body. Smooth muscles control involuntary movements in organs like the stomach and intestines, while cardiac muscle pumps blood throughout the circulatory system. Muscle fibers contain specialized proteins that enable contraction, converting chemical energy into mechanical work.</p>
+        </section>
+        <section id="nervous">
+            <h2 class="clickable" onclick="goToPage('nervous_system.html')">Nervous System</h2>
+            <img src="nervous.jpg" alt="Shoulder Nervous Structure">
+            <p>The nervous system serves as the body's communication network, coordinating and controlling bodily functions through electrical impulses. It comprises the brain, spinal cord, and peripheral nerves. Neurons, the functional units of the nervous system, transmit signals between different parts of the body. The central nervous system (CNS) integrates sensory information, processes motor commands, and regulates higher cognitive functions. The peripheral nervous system (PNS) extends throughout the body, relaying sensory input to the CNS and coordinating motor responses.</p>
+        </section>
+        <h2>Common Anatomy Terminologies:</h2>
+        <table>
+            <tr style="background-color: antiquewhite;">
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td>Superior (cranial) <button class="audio-button" onclick="playAudio('Superior.mp3')">▶</button></td>
+                <td>Towards the head</td>
+            </tr>
+            <tr>
+                <td>Inferior (caudal) <button class="audio-button" onclick="playAudio('Inferior.mp3')">▶</button></td>
+                <td>Towards the bottom (tail)</td>
+            </tr>
+            <tr>
+                <td>Anterior (ventral) <button class="audio-button" onclick="playAudio('Anterior.mp3')">▶</button></td>
+                <td>Towards the front</td>
+            </tr>
+            <tr>
+                <td>Posterior (dorsal) <button class="audio-button" onclick="playAudio('Posterior.mp3')">▶</button></td>
+                <td>Towards the back</td>
+            </tr>
+            <tr>
+                <td>Medial <button class="audio-button" onclick="playAudio('Medial.mp3')">▶</button></td>
+                <td>Towards the midline of the body</td>
+            </tr>
+            <tr>
+                <td>Lateral <button class="audio-button" onclick="playAudio('Lateral.mp3')">▶</button></td>
+                <td>Towards the side of the body</td>
+            </tr>
+            <tr>
+                <td>Deep <button class="audio-button" onclick="playAudio('Deep.mp3')">▶</button></td>
+                <td>Away from the surface of the body</td>
+            </tr>
+            <tr>
+                <td>Superficial <button class="audio-button" onclick="playAudio('Superficial.mp3')">▶</button></td>
+                <td>Towards the surface of the body</td>
+            </tr>
+            <tr>
+                <td>Proximal (with extremities) <button class="audio-button" onclick="playAudio('Proximal.mp3')">▶</button></td>
+                <td>Closer to the trunk or origin</td>
+            </tr>
+            <tr>
+                <td>Distal (extremities) <button class="audio-button" onclick="playAudio('Distal.mp3')">▶</button></td>
+                <td>Farther from the trunk or origin</td>
+            </tr>
+            <tr>
+                <td>Ventral <button class="audio-button" onclick="playAudio('Ventral.mp3')">▶</button></td>
+                <td>Related to the internal organs</td>
+            </tr>
+            <tr>
+                <td>Parietal <button class="audio-button" onclick="playAudio('Parietal.mp3')">▶</button></td>
+                <td>Related to the body walls</td>
+            </tr>
+        </table>
+
+        <script>
+            function goToPage(pageURL){
+                window.location.href = pageURL;
+            }
+
+            function playAudio(audioFile) {
+                var audio = new Audio(audioFile);
+                audio.play();
+            }
+        </script>
+
+    </body>
+</html>
