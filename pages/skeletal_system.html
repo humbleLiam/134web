@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Skeletal System</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            .skeletal-container {
+                position: relative;
+                width: 1000px;
+                height: 2000px;
+                background-image: url(Human_skeleton.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+            .bone-name {
+                position: absolute;
+                background-color: antiquewhite;
+                padding: 5px;
+                border-radius: 5px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="pages/anatomy.html"><h3>Back to Anatomy Page</h3></a>
+
+        <h1>Skeletal System</h1>
+        <div class="skeletal-container" onclick="displayBoneName(event)">
+         <div id="humerus" class="bone-name" style="left:700px; top:660px;">Humerus</div>
+         <div id="radius" class="bone-name" style="left:800px; top:900px">Radius</div>
+         <div id="ulna" class="bone-name" style="left:740px; top:820px">Ulna</div>
+         <div id="pelvis" class="bone-name" style="left:550px; top:800px;">Pelvis</div>
+         <div id="tibia" class="bone-name" style="left:500px; top:1600px;">Tibia</div>
+         <div id="fibula" class="bone-name" style="left:550px; top:1550px;">Fibula</div>
+         <div id="patella" class="bone-name" style="left:510px; top:1400px;">Patella</div>
+         <div id="femur" class="bone-name" style="left:510px; top:1300px;">Femur</div>
+         <div id="metatarsals" class="bone-name" style="left:560px; top:1850px;">Metatarsals</div>
+         <div id="tarsals" class="bone-name" style="left:500px; top:1800px;">Tarsals</div>
+         <div id="phalanges" class="bone-name" style="left:570px; top:1900px;">Phalanges</div>
+
+        </div>
+
+        <script>
+            function displayBoneName(event) {
+                var x = event.clientX + window.scrollX;
+                var y = event.clientY + window.scrollY;
+
+                var bone = document.elementFromPoint(x, y).id;
+
+                var boneNames= document.querySelectorAll('.bone-name');
+                boneNames.forEach(function(element) {
+                    element.style.display = 'none';
+                });
+
+                var boneName = document.getElementById(bone);
+                if (boneName) {
+                    boneName.style.left = x + 'px';
+                    boneName.style.top = y + 'px';
+                    boneName.style.display = 'block';
+                }
+            }
+        </script>
+        <footer>
+            <p>&copy; 2024 Kintohub Liam & Eden</p>
+        </footer>
+    </body>
+</html>
