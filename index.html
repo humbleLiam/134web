@@ -1,17 +1,106 @@
 <!DOCTYPE Html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>Main</title>
+    <style>
+      body{
+            background-color:darkgrey;
+            /*background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;*/
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 0;
+      }
+     .top-menu {
+      background-color: darkgray;
+      color:black;
+      padding: 10px 0;
+     }
+     .top-menu ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+     }
+     .top-menu ul li {
+      display: inline;
+     }
+     .top-menu ul li a {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: black;
+     }
+     .top-menu ul li a:hover {
+      background-color: gray;
+     }
+     .dropdown {
+      position: relative;
 
+     }
+     .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color:gray;
+      min-width: 160px;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+     }
+
+     .dropdown-content a{
+      color:black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+     }
+     .dropdown-content a:hover {
+      background-color: black;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+     footer {
+      background-color:black;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+     }
+    </style>
   </head>
   <body>
     <title>Main</title>
     <nav>
         <ul>
-          <li><a href="pages/anatomy.html">anatomy</a></li>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="pages/anatomy.html">Anatomy</a>
+          <div class="dropdown-content">
+            <a href="pages/skeletal_system.html">Skeletal System</a><br>
+            <a href="pages/muscular_system.html">Muscular System</a><br>
+            <a href="pages/nervous_system.html">Nervous System</a><br>
+          </div>
+          </li>
           <li><a href="pages/forum.html" target="_blank">Community Forum</a></li>
           <li><a href="pages/page3.html">Fun Facts</a></li>
           <li><a href="pages/page4.html">Sports</a></li>
         </ul>
     </nav>
+    <hr>
+    <!--Main content goes here-->
+    <div style="padding-top: 50px;">
+    <h1>Main content heading</h1>
+    <p> Write or make a login page here</p>
+    </div>
+    
+    <footer>
+      <p>&copy; KintoHub Liam & Eden</p>
+    </footer>
   </body>
 </html>
