@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+}
+header, section, footer {
+    margin-bottom: 20px;
+}
+h2.clickable {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid gray;
+    text-align: left;
+    padding: 8px;
+}
+.audio-button {
+    background-color: lightgray;
+    border: 1px solid ivory;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    cursor: pointer;
+}
+.audio-button:hover {
+    background-color: ivory;
+}
+.audio-icon {
+    display: none;
+}

@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.skeletal-container {
+    position: relative;
+    width: 1000px;
+    height: 2000px;
+    background-image: url('../resources/Human_skeleton.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.bone-name {
+    position: absolute;
+    background-color: antiquewhite;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+}
