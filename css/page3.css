@@ -1,0 +1,93 @@
+body{
+    background-color: beige;
+}
+pre{
+    border-style: dashed;
+    background-color: beige; 
+    margin: 10px;
+    text-align: center;
+    font-size: larger;
+    text-wrap: wrap ;
+}
+.textWrap{
+    width: 200px;
+    height: 100%;
+    text-decoration: double;
+    color:rgb(94, 33, 33); 
+    font-weight: 700;
+    padding-left: 10px;
+}
+.spacing{
+    margin-top: 20px;
+}
+.nav {
+    border: solid 2px;
+    background-color: green;
+    border-radius: 2px;
+    height: 30px;
+    display: flex;
+    box-shadow: 4PX 8PX 9PX;
+}
+.navButton{
+    font-size: 18px;
+    background-color: darkgrey;
+    margin: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
+    color: black;
+    text-decoration: none;
+}
+a.navButton:hover{
+    background-color: green;
+}
+.navButton:last-child{
+    flex-grow: 1;
+}
+.content1{
+    display: flex;
+    border: 2px solid;
+    background-color: green; 
+}
+.content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    background-color: green;
+}
+.radio{
+    display: grid;
+    grid-template-columns: auto auto; 
+    align-items: center;
+    margin: 5px;
+}
+.radioEle{
+    margin-bottom: 5px;
+    text-align: left;
+    size-adjust: smaller;
+    text-decoration: underline;
+}
+.subb{
+    margin: 10px;
+    background-color: black;
+    color: white;     
+}   
+.speedform{
+    border: solid 4px;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 30px;
+}
+.TextBox{
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 200px;
+    text-wrap: wrap;
+}
+.link{
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
