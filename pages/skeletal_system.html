@@ -4,47 +4,97 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Skeletal System</title>
-        <link rel="stylesheet" href="../css/skeletal_system.css ">
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/skeletal_system.css">
     </head>
     <body>
-        <a href="anatomy.html"><h3>Back to Anatomy Page</h3></a>
-
-        <h1>Skeletal System</h1>
-        <div class="skeletal-container" onclick="displayBoneName(event)">
+        <nav class="top-menu">
+            <ul>
+              <li><a href="pages/index.html">Home</a></li>
+              <li class="dropdown">
+                <a href="pages/anatomy.html">Anatomy</a>
+                <div class="dropdown-content">
+                  <a href="#">Skeletal System</a><br>
+                  <a href="pages/page3.html">Sports and Fun Facts</a><br>
+                  <a href="pages/page4.html">Food</a><br>
+                </div>
+              </li>
+              <li><a href="pages/forum.html" target="_blank">Community Forum</a></li>
+            </ul>
+        </nav>
+        <div class="skeletal-container">
+         <div id="clavicle" class="bone-name" style="left:570px; top:340px;">Clavicle</div>
+         <div id="acromion" class="bone-name" style="left:680px; top:350px;">Acromion</div>
          <div id="humerus" class="bone-name" style="left:700px; top:660px;">Humerus</div>
          <div id="radius" class="bone-name" style="left:800px; top:900px">Radius</div>
          <div id="ulna" class="bone-name" style="left:740px; top:820px">Ulna</div>
+         <div id="carpals" class="bone-name" style="left:800px; top:960px;">Carpals</div>
+         <div id="metacarpals" class="bone-name" style="left:800px; top:1020px;">Metacarpals</div>
+         <div id="phalanges2" class="bone-name" style="left:830px; top:1080px;">Phalanges</div> 
          <div id="pelvis" class="bone-name" style="left:550px; top:800px;">Pelvis</div>
+         <div id="femur" class="bone-name" style="left:510px; top:1300px;">Femur</div>
+         <div id="patella" class="bone-name" style="left:510px; top:1400px;">Patella</div>
          <div id="tibia" class="bone-name" style="left:500px; top:1600px;">Tibia</div>
          <div id="fibula" class="bone-name" style="left:550px; top:1550px;">Fibula</div>
-         <div id="patella" class="bone-name" style="left:510px; top:1400px;">Patella</div>
-         <div id="femur" class="bone-name" style="left:510px; top:1300px;">Femur</div>
-         <div id="metatarsals" class="bone-name" style="left:560px; top:1850px;">Metatarsals</div>
          <div id="tarsals" class="bone-name" style="left:500px; top:1800px;">Tarsals</div>
+         <div id="metatarsals" class="bone-name" style="left:560px; top:1850px;">Metatarsals</div>
          <div id="phalanges" class="bone-name" style="left:570px; top:1900px;">Phalanges</div>
 
+        <div class="bone-description" id="boneDescription"></div>
         </div>
 
         <script>
-            function displayBoneName(event) {
-                var x = event.clientX + window.scrollX;
-                var y = event.clientY + window.scrollY;
-
-                var bone = document.elementFromPoint(x, y).id;
-
-                var boneNames= document.querySelectorAll('.bone-name');
-                boneNames.forEach(function(element) {
-                    element.style.display = 'none';
-                });
-
-                var boneName = document.getElementById(bone);
-                if (boneName) {
-                    boneName.style.left = x + 'px';
-                    boneName.style.top = y + 'px';
-                    boneName.style.display = 'block';
+            document.querySelector('.skeletal-container').addEventListener('click', function(event) {
+                var bone = event.target;
+                if (bone.classList.contains('bone-name')) {
+                    var boneId = bone.getAttribute('id');
+                    var boneDescription = document.getElementById('boneDescription');
+                    boneDescription.innerHTML = getBoneDescription(boneId);
+                    //the next lines are unneccassary, just wanted to make the description appear to the right
+                    boneDescription.style.display = 'block';
+                    var boneRect = bone.getBoundingClientRect();
+                    var containerRect = document.querySelector('.skeletal-container').getBoundingClientRect();
+                    boneDescription.style.top = boneRect.top - containerRect.top + 'px';
+                    boneDescription.style.left = boneRect.right - containerRect.left + 20 + 'px';
+                }
+            });
+        
+            function getBoneDescription(boneId) {
+                switch (boneId) {
+                    case 'clavicle':
+                        return "The clavicle is the only bony attachment between the trunk and the upperlimb. It's palpable along its entire length.";
+                    case 'acromion':
+                        return "The acromion which is an anterolateral projection of the spine, arches over the glenohumeral joint and articulates via a facet on its distal end with the clavicle.";
+                    case 'humerus':
+                        return "The humerus serves as an attachment point to 13 muscles.";
+                    case 'radius':
+                        return "The radius permits the forearm to pronate and supinate, and flex at the wrist";
+                    case 'ulna':
+                        return "The ulna works with the radius to move the forearm and wrist.";
+                    case 'carpals':
+                        return "There are 8 carpal bone - scaphoid, lunate, triqeutrum, pisiform, trapezium, trapezoid, capitate, and hamate.";
+                    case 'metacarpals':
+                        return "Each of the 5 metacarpal bones are related to one digit. E.g. metacarpal 1 is related to the thumb (pollex).";
+                    case 'pelvis': 
+                        return "The bones of the pelvis consist of the right and left pelvic (hip) bones, the sacrum and coccyx.";
+                    case 'femur': 
+                        return "The longest and strongest bone in the body is the femur, it is also the skeletal support for the thigh.";
+                    case 'patella':
+                        return "The patella (knee cap) is the largest sesamoid bone in the body, and is formed within the tendon of the quadriceps femoris muscle. The knee joint is the largest synovial joint in the body.";
+                    case 'tibia':
+                        return "It is the weightbearing bone of the leg and is therefore, much larger than fibula - has medial malleolus.";
+                    case 'fibula':
+                        return "It articulates superiorly with the inferior aspect of the lateral condyle of the proximal tibia, but does not take part in formation of the knee joint - distally form lateral malleolus.";
+                    case 'tarsals':
+                        return "There are seven tarsal bones - calcaneous, talus, 3 cuneiforms, navicular, and cuboid.";
+                    case 'metatarsals':
+                        return "There are five metatarsals in the foot, numbered I to V from medial to lateral.";
+                    default:
+                        return "No description available.";
                 }
             }
         </script>
+                
         <footer>
             <p>&copy; 2024 Kintohub Liam & Eden</p>
         </footer>
