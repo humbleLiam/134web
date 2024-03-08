@@ -6,7 +6,7 @@ body {
     position: relative;
     width: 1000px;
     height: 2000px;
-    background-image: url(Human_skeleton.svg);
+    background-image: url(../resources/Human_skeleton.svg);
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
