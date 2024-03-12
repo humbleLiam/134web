@@ -1,29 +1,30 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(166, 164, 164);
-    margin: 20px;
+    margin: 5px;
 }
-header, section, footer {
-    margin-bottom: 20px;
-}
+
 .top-menu {
     background-color: rgba(0, 0, 0, 0.687);
     color: black;
+    width: auto;
     padding: 10px 0;
-    width: 100%;
+    margin: 0;
   }
   .top-menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     text-align: center;
+    white-space: nowrap;
+    margin: 0;
   }
   .top-menu ul li {
     display: inline;
   }
   .top-menu ul li a {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 10px 15px;
     text-decoration: none;
     color: white;
   }
@@ -60,6 +61,34 @@ h2.clickable {
     color: blue;
     text-decoration: underline;
 }
+#anatomy {
+  width: 600px;
+  border-bottom: 1px dotted black;
+}
+#skeletal {
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility:visible;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility:hidden;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -83,4 +112,56 @@ th, td {
 }
 .audio-icon {
     display: none;
+}
+.pages {
+  display: inline-block;
+  width: auto;
+}
+
+.pages a {
+  color: black;
+  padding: 8px 16px;
+  position: relative;
+  left: 90%;
+  text-decoration: none;
+}
+
+.pages a.active {
+  background-color: rgba(0, 0, 0, 0.687);
+  color: white;
+}
+
+.pages a:hover:not(.active) {
+  background-color: gray;}
+
+@media only screen and (max-width: 600px) {
+  .top-menu{
+    width:600px;
+    padding: 10px 0;
+  }
+  .top-menu ul li {
+    display: inline-block;
+    position: relative;
+  }
+  .top-menu ul li a{
+    font-size: 25px;
+  }
+  .dropdown-content {
+    position: absolute;
+    display: none;
+  }
+  .top-menu ul li:hover .dropdown-content {
+    display: block;
+  }
+  table {
+    width: 500px;
+  }
+  .audio-button{
+    width: 20px;
+    height: 20px;
+  }
+  .pages a {
+    padding: 5px 10px;
+    align-items: center;
+  }
 }

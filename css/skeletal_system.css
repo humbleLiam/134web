@@ -1,33 +1,161 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+.top-menu {
+  background-color: rgba(0, 0, 0, 0.687);
+  color: black;
+  width: 1000px;
+  padding: 10px 0;
+}
+
+.top-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.top-menu ul li {
+  display: inline;
+}
+.top-menu ul li a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+}
+.top-menu ul li a:hover {
+  background-color: gray;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: gray;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
+  background-color: black;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 .skeletal-container {
-    position: relative;
-    width: 1000px;
-    height: 2000px;
-    background-image: url(../resources/Human_skeleton.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
+  position: relative;
+  width: 1000px;
+  height: 2000px;
+  background-image: url(../resources/Human_skeleton.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 0;
 }
 
 .bone-name {
-    position: absolute;
-    background-color: antiquewhite;
-    padding: 5px;
-    border-radius: 5px;
-    display: block;
+  position: absolute;
+  background-color: antiquewhite;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .bone-description {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    color:black;
+  width: 280px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: none;
+}
+
+.pages {
+  display: inline-block;
+}
+
+.pages a {
+  color: black;
+  padding: 8px 16px;
+  position: relative;
+  left: 100%;
+  text-decoration: none;
+}
+
+.pages a:hover:not(.active) {
+  background-color: gray;
+}
+footer {
+  position: absolute;
+  left: 350px;
+}
+
+@media only screen and (max-width: 600px) {
+   .bone-name {
     position: absolute;
-    top: 0;
-    right: 0;
+  }
+
+  .bone-description {
+    width: 280px;
+    padding: 10px;
     display: none;
+  }
+  .top-menu{
+    width:1000px;
+    padding: 10px 0;
+  }
+  .top-menu ul li {
+    display: inline-block;
+  }
+  .top-menu ul li a{
+    font-size: 25px;
+  }
+  .dropdown-content {
+    position: absolute;
+    display: none;
+  }
+  .top-menu ul li:hover .dropdown-content {
+    display: block;
+  }
+  .bone-name {
+    font-size: 10px;
+    padding: 3px;
+  }
+  .bone-description {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .pages {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .pages a {
+    align-items: center;
+  }
+  footer{
+    position: relative;
+  }
 }
