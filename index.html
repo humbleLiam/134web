@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css ">
     <title>Home</title>
   </head>
@@ -23,20 +23,34 @@
     </nav>
 
     <div class="container">
+      <div id="loginContainer">
       <h1>Login</h1>
-      <form action="login.php" method="post">
+      <form id="loginForm">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
       </form>
-      <p><a href="#">Forgot password?</a></p>
+      <p><a href="#" id="forgotPassword">Forgot password?</a></p>
+      <p><a href="#" id="showRegisterForm">Don't have an account? Register here.</a></p>
     </div>
-    
-    &nbsp;
-    &nbsp;
-    
+
+    <div id="registerContainer" style="display: none;">
+      <h1>Register</h1>
+      <form id="registerForm">
+        <label for="newUsername">New Username:</label><br>
+        <input type="text" id="newUsername" name="newUsername" required><br><br>
+        <label for="newPassword">New Password:</label><br>
+        <input type="password" id="newPassword" name="newPassword" required><br><br>
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+        <input type="submit" value="Register">
+      </form>
+      <p><a href="#" id="showLoginForm">Already have an account? Login here.</a></p>
+    </div>
+    </div>
+
     <footer>
       <p>&copy; KintoHub Liam & Eden</p>
       <div class="store-buttons">
@@ -44,5 +58,65 @@
         <a href="https://www.apple.com/app-store/" target="_blank"><img src="resources\app_store.svg" alt="Download on the App Store"></a>
       </div>
     </footer>
+
+    <script>
+      document.getElementById("showLoginForm").addEventListener("click", function(event){
+        event.preventDefault();
+        document.getElementById("loginContainer").style.display = "block";
+        document.getElementById("registerContainer").style.display = "none";
+    });
+
+    document.getElementById("showRegisterForm").addEventListener("click", function(event){
+        event.preventDefault();
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("registerContainer").style.display = "block";
+    });
+    document.getElementById("forgotPassword").addEventListener("click", function(event){
+        event.preventDefault();
+        let email = prompt("Please enter your email address:");
+        if (email) {
+            alert("A password reset link has been sent to your email address.");
+            //I should put logic here to be able to send the reset link to the email
+        }
+      });
+
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        let storedUsername = localStorage.getItem("username");
+        let storedPassword = localStorage.getItem("password");
+
+        if (username === storedUsername && password === storedPassword) {
+          alert("Login successful!");
+        }else {
+          alert("Invalid username or password. Please try again.");
+        }
+      });
+
+      document.getElementById("registerForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        let newUsername = document.getElementById("newUsername").value;
+        let newPassword = document.getElementById("newPassword").value;
+        let confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (newPassword !== confirmPassword){
+          alert("Passwords do not match. Please try again.");
+          return;
+        }
+        
+        localStorage.setItem("username", newUsername);
+        localStorage.setItem("password", newPassword);
+        alert("Registration successful! You can now login with your new account.");
+
+        document.getElementById("newUsername").value = "";
+        document.getElementById("newPassword").value = "";
+        document.getElementById("confirmPassword").value = "";
+
+        document.getElementById("loginContainer").style.display = "block";
+        document.getElementById("registerContainer").style.display = "none";
+    });
+    </script>
   </body>
 </html>
